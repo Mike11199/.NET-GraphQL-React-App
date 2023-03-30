@@ -1,8 +1,28 @@
+using API.GraphQL;
+using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContextFactory<OMAContext>(options =>
+{
+    options.UseInMemoryDatabase("InMemoryDb");  //from EFC
+});
+//builder.services.addcontrollers();
 
-builder.Services.AddControllers();
+
+//graphql service
+
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<Query>()
+    .AddFiltering();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -16,10 +36,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
-app.MapControllers();
+//app.MapControllers();
+
+app.MapGraphQL();
 
 app.Run();
+
+
+
