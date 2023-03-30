@@ -30,4 +30,5 @@ namespace API.GraphQL
 ```
 
 - Can view schema in Banana Cake Pop is a GraphQL IDE when running in local host with 'dotnet run' in backend folder:
+
 ![image](https://user-images.githubusercontent.com/91037796/228723044-e54b43ba-8ac3-408f-966a-6fff9d944c45.png)
