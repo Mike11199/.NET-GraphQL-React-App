@@ -3,7 +3,8 @@
 - Set up GraphQL using C# classes, and dependency injection of OMAContext
 - Can view schema and run queries in Banana Cake Pop, which is a GraphQL IDE when running in local host with 'dotnet run' in backend folder
 
-![image](https://user-images.githubusercontent.com/91037796/228725679-15b407ae-f2c3-4df6-ae02-65284a55bf9d.png)
+![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/cd3d37cd-6008-4fa5-a774-843ad6cb3f33)
+
 
 
 ```cs
