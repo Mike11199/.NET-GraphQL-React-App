@@ -5,6 +5,7 @@
 
 ![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/2cf96c89-271b-4677-84ae-06975092bdff)
 
+![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/ac719aef-3c07-4ed2-ba0d-c792cffd8c91)
 
 
 ```cs
