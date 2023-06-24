@@ -3,9 +3,7 @@
     "",
     "\\backend",
     "\\backend\\API",
-    "\\backend\\API\\Controllers",
-    "\\backend\\API\\Properties",
-    "\\backend\\Core"
+    "\\backend\\API\\Controllers"
   ],
   "SelectedNode": "\\backend\\OrderManagementBackend.sln",
   "PreviewInSolutionExplorer": false
