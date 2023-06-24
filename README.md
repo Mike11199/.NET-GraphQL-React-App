@@ -1,6 +1,7 @@
 # .NET-GraphQL-React-App
 
 - Set up the GraphQL API using C# classes, entities (Address, Customer, Orders) and dependency injection of OMAContext.
+- Added a C# interface, which is an abstract class that can contain properties and methods, but not fields/variables.
 - Added GraphQL Voyager to allow one to visualize the GraphQL API as an interactive graph via the "/graphql-voyager" endopoint.
 - Can view schema and run queries in Banana Cake Pop, which is a GraphQL IDE when running in local host with 'dotnet run' in backend folder
 
