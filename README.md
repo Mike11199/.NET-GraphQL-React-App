@@ -22,7 +22,7 @@
 <br/>
 <br/>
 
-<img src="https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/02f1ba06-b6cf-4d8a-8a20-af80e9f7ce42" alt="image" width="500" height="300">
+![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/ac719aef-3c07-4ed2-ba0d-c792cffd8c91)
 
 
 # #Backend -C# Query and Service
