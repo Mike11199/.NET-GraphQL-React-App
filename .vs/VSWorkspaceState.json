@@ -3,7 +3,10 @@
     "",
     "\\backend",
     "\\backend\\API",
-    "\\backend\\API\\Controllers"
+    "\\backend\\API\\Controllers",
+    "\\backend\\Core",
+    "\\backend\\Infrastructure"
   ],
+  "SelectedNode": "\\backend\\Infrastructure\\Infrastructure.csproj",
   "PreviewInSolutionExplorer": false
 }
