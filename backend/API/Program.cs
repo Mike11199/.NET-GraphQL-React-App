@@ -1,6 +1,8 @@
 using API.GraphQL;
+using Core.Interfaces;
 using GraphQL.Server.Ui.Voyager;
 using Infrastructure.Data;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -16,6 +18,9 @@ builder.Services.AddDbContextFactory<OMAContext>(options =>
 });
 //builder.services.addcontrollers();
 
+// this part adds customer and order services to the program which we can inject into our queries
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 //graphql service
 
@@ -23,6 +28,18 @@ builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
     .AddFiltering();
+
+//cors service set up
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: AllowSpecificOrigins,
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -2,7 +2,7 @@
 
 namespace Core.Interfaces
 {
-    internal interface IOrderService
+    public interface IOrderService
     {
         IQueryable<Order> GetOrders();
     }

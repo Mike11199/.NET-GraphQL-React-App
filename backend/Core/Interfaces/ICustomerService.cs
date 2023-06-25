@@ -2,7 +2,7 @@
 
 namespace Core.Interfaces
 {
-    internal interface ICustomerService
+    public interface ICustomerService
     {
         IQueryable<Customer> GetCustomersAndOrders();
     }
