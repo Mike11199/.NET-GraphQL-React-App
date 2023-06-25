@@ -1,11 +1,12 @@
 using API.GraphQL;
+using GraphQL.Server.Ui.Voyager;
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 
 
 
-
+var AllowSpecificOrigins = "_allowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -29,6 +30,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+//so front end can access back end without issues
+app.UseCors(AllowSpecificOrigins);  
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -43,6 +47,8 @@ if (app.Environment.IsDevelopment())
 //app.MapControllers();
 
 app.MapGraphQL();
+
+app.UseGraphQLVoyager("/graphql-voyager", new VoyagerOptions { GraphQLEndPoint = "/graphql"} );
 
 app.Run();
 
