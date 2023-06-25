@@ -1,4 +1,11 @@
-# .NET-GraphQL-React-App
+# Frontend - TypeScript
+
+- Using Vite as much faster than create-react-app (written in Go with hot module replacement as oppossed to webpack), and yarn (faster than npm).  Using typescript to mirror internship tech stack.
+
+    <img src="https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/02f1ba06-b6cf-4d8a-8a20-af80e9f7ce42" alt="image" style="width: 50%; height: auto;">
+
+
+# Backend - .NET-GraphQL-React-App
 
 - Set up the GraphQL API using C# classes, entities (Address, Customer, Orders) and dependency injection of OMAContext.
 - Added a C# interface, which is an abstract class that can contain properties and methods, but not fields/variables.
@@ -15,10 +22,10 @@
 <br/>
 <br/>
 
-![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/ac719aef-3c07-4ed2-ba0d-c792cffd8c91)
+<img src="https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/02f1ba06-b6cf-4d8a-8a20-af80e9f7ce42" alt="image" width="500" height="300">
 
 
-# C# Query and Service
+# #Backend -C# Query and Service
 
 -Query in C# that implements GraphQL 
 
