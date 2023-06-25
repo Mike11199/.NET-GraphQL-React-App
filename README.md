@@ -2,6 +2,7 @@
 
 - Type "yarn start" to run.
 - Using Vite as much faster than create-react-app (written in Go with hot module replacement as oppossed to webpack), and yarn (faster than npm).  Using typescript to mirror internship tech stack.
+- Added graphql codegen to generate code from graphql schema using "graphql-codegen init" to generate codegen.ts file.
 
     <img src="https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/02f1ba06-b6cf-4d8a-8a20-af80e9f7ce42" alt="image" style="width: 50%; height: auto;">
 
