@@ -7,40 +7,82 @@
 
 ![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/2cf96c89-271b-4677-84ae-06975092bdff)
 
+<br/>
+<br/>
+
+![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/06c323e3-2c90-42f9-8d5f-79c1cb8c7b77)
+
+<br/>
+<br/>
+
 ![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/ac719aef-3c07-4ed2-ba0d-c792cffd8c91)
 
 
+# C# Query and Service
+
+-Query in C# that implements GraphQL 
+
 ```cs
 using Core.Entities;
-using Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
+using Core.Interfaces;
 
 namespace API.GraphQL
 {
     public class Query
     {
 
-        [UseFiltering]  // can use one endpoint and filter the way we want with this!
-        public IQueryable<Customer> GetCustomers([Service] OMAContext context )  //dependency injection of service
+        [UseFiltering]  // can use one endpoint and pass filters to it with this
+        public IQueryable<Customer> GetCustomers([Service] ICustomerService customerService )  
         {
-            context.Database.EnsureCreated();
-            return context.Customers
-                .Include(o => o.Orders)    //this so we can also query orders when querying customers in graphql
-                .Include(a => a.Address);
+            return customerService.GetCustomersAndOrders(); 
         }
 
         [UseFiltering]
-        public IQueryable<Order> GetOrders([Service] OMAContext context)  //dependency injection of service
+        public IQueryable<Order> GetOrders([Service] IOrderService orderService)  
         {
-            context.Database.EnsureCreated();
-            return context.Orders
-                .Include(c => c.Customer);
+            return orderService.GetOrders();
         }
 
     }
 }
+
 ```
 
+<br/>
+<br/>
+
+-Service in C# that is used by GraphQL Query
+
+```cs
+using Core.Entities;
+using Core.Interfaces;
+using Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+
+namespace Infrastructure.Services
+{
+    public class OrderService : IOrderService
+    { 
+
+        private readonly IDbContextFactory<OMAContext> _contextFactory;
+
+        public OrderService(IDbContextFactory<OMAContext> contextFactory)
+        {
+            _contextFactory = contextFactory;
+        }
+
+        public IQueryable<Order> GetOrders()
+        {
+            var context = _contextFactory.CreateDbContext();
+            context.Database.EnsureCreated();
+
+            return context.Orders
+                .Where(o => !o.IsDeleted)
+                .Include(o => o.Customer);
+        }
+    }
+}
+```
 
 
 
