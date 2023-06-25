@@ -29,9 +29,75 @@ export type GetCustomersLazyQueryHookResult = ReturnType<typeof useGetCustomersL
 export type GetCustomersQueryResult = Apollo.QueryResult<GetCustomersQuery, GetCustomersQueryVariables>;
 
 ```
+<br/>
+<br/>
+<br/>
 
-    
 
+- Used codegen generated GraphQL query to call function to retrieve data from C# backend (running on localhost for now)
+
+```js
+
+import React from 'react';
+import { useGetCustomersQuery } from '../../../graphql/generated/schema';
+
+export default function CustomersDashboard() {
+
+    const { data:customersData, loading, error } = useGetCustomersQuery();
+
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
+    if (error || !customersData){
+        return <div>Error...</div>
+    }
+    return (
+        <div>
+            <h2>Customers</h2>
+            <ul>
+                {customersData.customers?.map( customer=> (
+                    <li key={customer?.id}>{customer?.firstName}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+
+```
+
+  
+<br/>
+<br/>
+<br/>
+
+```graphql
+query getCustomers {
+  customers {
+    id
+    firstName
+    lastName
+    contactNumber
+    address {
+      addressLine1      
+      addressLine2
+      city
+      state
+      country
+      isDeleted
+    }
+    orders{
+      id
+      orderDate
+  }
+  }
+}
+```    
+
+<br/>
+<br/>
+<br/>
 
 # Backend - .NET-GraphQL-React-App
 
@@ -52,6 +118,10 @@ export type GetCustomersQueryResult = Apollo.QueryResult<GetCustomersQuery, GetC
 
 ![image](https://github.com/Mike11199/.NET-GraphQL-React-App/assets/91037796/ac719aef-3c07-4ed2-ba0d-c792cffd8c91)
 
+
+<br/>
+<br/>
+<br/>
 
 # #Backend -C# Query and Service
 
