@@ -4,6 +4,8 @@ import { AgGridReact } from "ag-grid-react";
 import { ColDef } from "ag-grid-community";
 import 'ag-grid-community/styles/ag-grid.css'
 import 'ag-grid-community/styles/ag-theme-alpine.css'
+import 'ag-grid-community/styles/ag-theme-balham.css'
+
 
 interface CustomerListProps {
     customers: Customer[]
@@ -42,7 +44,7 @@ export default function CustomerList({customers}: CustomerListProps) {
     }), [])
 
     return (
-        <div className="ag-theme-alpine" style={{ height: 500, width: "100%" }}>
+        <div className="ag-theme-balham-dark" style={{ height: 500, width: "100%" }}>
         <AgGridReact
           rowData={customers}
           columnDefs={columnDefs as ColDef[]}
