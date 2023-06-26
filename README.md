@@ -2,7 +2,8 @@
 
 - Added ag-grid alpine style which automatically includes filtering and sorting capabilities.  Set up by passing columnDefs into agGrid based on a typescript interface for Customers from the GraphQL Schema.
   
-![image](https://github.com/Mike11199/.NET-GraphQL-TypeScript-App/assets/91037796/8a593caa-6213-4ffa-90aa-d3e938e4ef75)
+![image](https://github.com/Mike11199/.NET-GraphQL-TypeScript-App/assets/91037796/9186647a-9106-452a-8df7-3a37a2ea3660)
+
 
 
 
