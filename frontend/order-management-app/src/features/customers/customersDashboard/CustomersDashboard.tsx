@@ -1,4 +1,3 @@
-import React from 'react';
 import { useGetCustomersQuery } from '../../../graphql/generated/schema';
 
 export default function CustomersDashboard() {
